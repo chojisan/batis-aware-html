@@ -1,10 +1,42 @@
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 95%;
+    font-weight: 600;
+    padding: .75em 0;
+    letter-spacing: 1px;
+    color: #fff;
+    font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.nav-item {
+	padding: 0 10px;
+}
+
 section h3.section-subheading {
     font-size: 16px;
     font-weight: 400;
     font-style: italic;
     margin-bottom: 75px;
     text-transform: none;
-    font-family: 'Droid Serif',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
 }
 
 #mainNav a {
@@ -14,6 +46,10 @@ section h3.section-subheading {
 #mainNav.navbar-shrink {
 	background: linear-gradient(45deg, #8a1fc1, #fd3780);
 	height: 70px;
+}
+
+#mainNav.navbar-shrink .nav-item .nav-link {
+	font-weight: 400;
 }
 
 #mainNav.fixed-top {
@@ -27,6 +63,7 @@ section h3.section-subheading {
 
 #donate {
 	padding: 60px 0;
+	background-color: #f6e6ff;
 }
 
 #donate .content-donate {
@@ -351,4 +388,45 @@ section h3.section-subheading {
 	background-color: #292c31;
 	padding: 30px 0;
     color: #62656a;
+}
+
+
+.gototop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gototop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.gototop a {
+    width: 50px;
+    height: 50px;
+    display: table;
+    background: black;
+    color: #fff;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.gototop a i {
+    height: 50px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.icon-arrow-up2:before {
+    content: "\ea6a";
 }
