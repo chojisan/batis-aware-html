@@ -74,10 +74,10 @@
   
   };
 
-  $(function(){
+  //AOS Page Animation
+  AOS.init();
 
-    goToTop();
-
-  });
+  //back to top
+  goToTop();
 
 })(jQuery); // End of use strict
