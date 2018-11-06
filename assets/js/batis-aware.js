@@ -74,10 +74,58 @@
   
   };
 
-  //AOS Page Animation
+  // Contact Form
+  var contactForm = function() {
+    // Get the form.
+    var form = $('#ajax-contact');
+    var formMessages = $('#form-messages');
+
+    $(form).submit(function(e) {
+
+      e.preventDefault();
+
+      var formData = $(form).serialize();
+
+      // Submit the form using AJAX.
+      $.ajax({
+        type: 'POST',
+        url: 'mailer.php',
+        data: formData,
+
+      }).done(function(response) {
+        // Make sure that the formMessages div has the 'success' class.
+        $(formMessages).removeClass('alert alert-danger');
+        $(formMessages).addClass('alert alert-success');
+
+        // Set the message text.
+        $(formMessages).text(response);
+
+        // Clear the form.
+        $('#name').val('');
+        $('#email').val('');
+        $('#subject').val('');
+        $('#message').val('');
+      }).fail(function(data) {
+        // Make sure that the formMessages div has the 'error' class.
+        $(formMessages).removeClass('alert alert-success');
+        $(formMessages).addClass('alert alert-danger');
+
+        // Set the message text.
+        if (data.responseText !== '') {
+          $(formMessages).text(data.responseText);
+        } else {
+          $(formMessages).text('Oops! An error occured and your message could not be sent.');
+        }
+      });
+    });
+  };
+
+  // AOS Page Animation
   AOS.init();
 
-  //back to top
+  // ajax contact
+  contactForm();
+  // back to top
   goToTop();
 
 })(jQuery); // End of use strict
